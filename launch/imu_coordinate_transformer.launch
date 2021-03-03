@@ -1,0 +1,4 @@
+<launch>
+  <node pkg="imu_coordinate_transformer" type="imu_coordinate_transformer" name="imu_coordinate_transformer" output="screen">
+  </node>
+</launch>

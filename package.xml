@@ -1,5 +1,5 @@
 <package format="2">
-  <name>template_ros_node</name>
+  <name>imu_coordinate_transformer</name>
   <version>0.0.1</version>
   <description>template_ros_node packages</description>
   <maintainer email="kelvinkang@cmu.edu">kelvinkang</maintainer>
@@ -12,9 +12,6 @@
   <depend>rospy</depend>
   <depend>std_msgs</depend>
   <depend>sensor_msgs</depend>
-  <depend>nav_msgs</depend>
-  <depend>tf</depend>
-  <depend>actionlib_msgs</depend>
 
   <exec_depend>message_generation</exec_depend>
 
