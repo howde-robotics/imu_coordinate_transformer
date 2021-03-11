@@ -15,10 +15,12 @@ void ImuCoordinateTransformer::imuCallback(const sensor_msgs::Imu& imuMsg)
 {
   transformedImu_ = imuMsg;
   transformedImu_.header.frame_id = "imu_link";
+  transformedImu_.linear_acceleration.x = imuMsg.linear_acceleration.z;
+  transformedImu_.linear_acceleration.y = -imuMsg.linear_acceleration.x;
   transformedImu_.linear_acceleration.z = -imuMsg.linear_acceleration.y;
-  transformedImu_.linear_acceleration.y = -imuMsg.linear_acceleration.z;
+  transformedImu_.angular_velocity.x = imuMsg.angular_velocity.z;
+  transformedImu_.angular_velocity.y = -imuMsg.angular_velocity.x;
   transformedImu_.angular_velocity.z = -imuMsg.angular_velocity.y;
-  transformedImu_.angular_velocity.y = -imuMsg.angular_velocity.z;
   
   imuPub_.publish(transformedImu_);
 }
